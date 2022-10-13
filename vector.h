@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-typedef struct{
-    void* array = NULL; //array of generic type
+typedef struct vecta{
+    void* array[]; //array of generic type, default capacity is 3
     int cap; //initial capacity
     int itemcount; //amount of items
     void (*push)(vecta*, void*);
     int (*isEmpty)(vecta*);
     void (*removeAt)(vecta*, int);
     void (clear)(vecta*);
-} vecta;
+} vec;
 
 int isEmpty(vecta* dynarr);
 void push(vecta* dynarr, void* item);
